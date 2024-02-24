@@ -10,7 +10,7 @@ shapefile_path = os.path.join(cwd, 'dependencies', 'bike_lanes.shp')
 
 chicago_map = folium.Map(location=[41.8781, -87.6298], zoom_start=11)
 
-bike_lanes = gpd.read_file("./dependencies/bike_lanes.shp")
+bike_lanes = gpd.read_file("../dependencies/bike_lanes.shp")
 
 # Check the CRS of the GeoDataFrame
 print(bike_lanes.crs)  # This should print out the CRS information
