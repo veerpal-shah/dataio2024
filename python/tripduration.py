@@ -6,7 +6,7 @@ import numpy as np
 df = pd.read_csv("../dependencies/July.csv")
 
 # Filter the DataFrame to include only rows where 'member_casual' is 'member'
-# df = df[df['member_casual'] == 'casual']
+df = df[df['member_casual'] == 'member']
 
 # Convert 'started_at' and 'ended_at' columns to datetime objects
 df['started_at'] = pd.to_datetime(df['started_at'])
@@ -20,18 +20,22 @@ x_bin_edges = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60]
 
 y_bin_edges = np.arange(0, 225000, 25000)
 
-# Create two more histograms for members and nonmembers
 
 # Plot a histogram of trip durations in minutes with custom bins
-plt.hist(df['trip_duration_minutes'], bins=x_bin_edges)
+plt.hist(df['trip_duration_minutes'], bins=x_bin_edges, color='blue')
 plt.xlabel('Trip Duration (minutes)')
 plt.ylabel('Frequency')
-plt.title('Frequency of Bike Rides Sorted by Trip Durations for all users')
+plt.title('Frequency of Bike Rides Sorted by Trip Durations for members for July')
 plt.xticks(x_bin_edges)  # Set x-axis tick marks to match bin edges
 plt.yticks(y_bin_edges)
 plt.grid(axis='x')     # Add gridlines along x-axis
 
-plt.savefig('bike_rides_histogram.png')
+#members is blue 
+#casual is red
+#total is purple 
+
+
+plt.savefig('bike_rides_histogram_members.png')
 
 plt.show()
 
