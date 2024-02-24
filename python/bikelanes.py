@@ -25,18 +25,18 @@ folium.GeoJson(bike_lanes).add_to(chicago_map)
 
 # Adding two markers for Most used station and least used station
 
-most_used_arr = [[[lat, long], "Station #", "# rented"]]
+# most_used_arr = [[[lat, long], "Station #", "# rented"]]
 
 
-for tup in most_used_arr:
-    str = "Station {}, {} bikes rented".format(tup[2], tup[3])
-    folium.Marker(location=tup[0], popup=str, icon=folium.Icon(color="blue")).add_to(chicago_map)
+# for tup in most_used_arr:
+#     str = "Station {}, {} bikes rented".format(tup[2], tup[3])
+#     folium.Marker(location=tup[0], popup=str, icon=folium.Icon(color="blue")).add_to(chicago_map)
     
-least_used_arr = [[[lat, long], "Station #", "# rented"]]
+# least_used_arr = [[[lat, long], "Station #", "# rented"]]
 
-for tup in least_used_arr:
-    str = "Station {}, {} bikes rented".format(tup[2], tup[3])
-    folium.Marker(location=tup[0], popup=str, icon=folium.Icon(color="red")).add_to(chicago_map)
+# for tup in least_used_arr:
+#     str = "Station {}, {} bikes rented".format(tup[2], tup[3])
+#     folium.Marker(location=tup[0], popup=str, icon=folium.Icon(color="red")).add_to(chicago_map)
 
 
 most_used_location = [41.89228, -87.61204]
@@ -47,6 +47,7 @@ least_used_label = "Station 769, 214,371 bikes rented"
 
 # Add the markers to the map
 
-folium.Marker(location=least_used_location, popup=least_used_label, icon=folium.Icon(color="red")).add_to(chicago_map)
+# folium.Marker(location=least_used_location, popup=least_used_label, icon=folium.Icon(color="red")).add_to(chicago_map)
 
-chicago_map.save("chicago_map_bike_lanes.html")
+
+chicago_map.save("chicago_map_bike_lanes_no_markers.html")

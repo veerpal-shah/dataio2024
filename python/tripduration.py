@@ -15,6 +15,10 @@ df['ended_at'] = pd.to_datetime(df['ended_at'])
 # Calculate trip durations in minutes
 df['trip_duration_minutes'] = (df['ended_at'] - df['started_at']).dt.total_seconds() / 60
 
+# total_minutes = df['trip_duration_minutes'].sum()
+
+# print("Total minutes is " + total_minutes)
+
 # Define custom bin edges
 x_bin_edges = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60]
 
